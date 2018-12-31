@@ -12,8 +12,28 @@ router.get('/register', (req, res) => res.render('register'));
 
 //register handle
 router.post('/register', (req, res)=> {
-    console.log(req.body);
-    res.send('hellow');
-}));
+    const { name, email, password, password2} = req.body;
+
+    let errors = [];
+
+    //check required fields
+    if(!name || !email || !password || !password2){
+          errors.push ({msg: 'please fill in all fields'});
+    }
+
+    //check passwords match
+
+    if(password !== password2){
+      errors.push({msg: 'passwords do not match'})
+    }
+
+    //check pass lengthj
+
+    if(){
+      
+    }
+
+
+});
 
 module.exports = router;
