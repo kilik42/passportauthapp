@@ -24,13 +24,14 @@ router.post('/register', (req, res)=> {
     //check passwords match
 
     if(password !== password2){
-      errors.push({msg: 'passwords do not match'})
+      errors.push({msg: 'passwords do not match'});
     }
 
     //check pass lengthj
 
-    if(){
-      
+    if(password.length < 6){
+      errors.push({msg: 'password should be at least 6 characters'});
+
     }
 
 
